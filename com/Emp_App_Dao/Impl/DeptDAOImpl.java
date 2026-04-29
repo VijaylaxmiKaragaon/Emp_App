@@ -9,24 +9,33 @@ import com.Emp_App_Utility.Connector;
 
 
 public class DeptDAOImpl implements DeptDAO {
-
+    
+    private Connection con;
 	
-	 private Connection con;
-		
-		public DeptDAOImpl(Connection con) {
-			this.con=Connector.requestConnection();
-			}
-		
-		
+	public DeptDAOImpl() {
+		this.con=Connecter.requestConnection();
+		}
+	
 	@Override
 	public void addDept(Dept t) {
-		// TODO Auto-generated method stub
+		String query="Insert into dept values (0,?,?)";
+		try {
+			PreparedStatement ps=con.prepareStatement(query);
+			ps.setString(1,t.getDname());
+			ps.setString(2,t.getLocation());
+			ps.executeUpdate();
+			System.out.println("Dept data added succecfully:");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Failed to data!");
+		}
 
 	}
 
 	@Override
 	public Dept findById(Dept d) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
