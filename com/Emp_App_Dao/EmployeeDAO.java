@@ -8,7 +8,7 @@ import com.Emp_App_Dto.Employee;
 public interface EmployeeDAO {
 	
 	
-    void addEmployee(Employee e); //create
+   void addEmployee(Employee e); //create
 	
 	Employee findById(Integer id); //read
 	
@@ -18,5 +18,5 @@ public interface EmployeeDAO {
 	
 	void updateEmployee(Employee e); //update
 	
-	void deleteEmployee(Integer id); //delete
+	Employee deleteEmployee(Integer id); //delete
 }
