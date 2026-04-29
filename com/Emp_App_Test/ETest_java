@@ -1,0 +1,70 @@
+package empapp.test;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.empappdao.EmployeeDAO;
+import com.empappdao.impl.EmployeeDAOImpl;
+import com.empappdto.Employee;
+
+public class Test {
+     public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+//		Employee e=new Employee();
+		EmployeeDAO edao = new EmployeeDAOImpl();
+		
+		//addEmployee
+//		System.out.println("Enter the emp name:");
+//		e.setName(sc.next());
+//		
+//		System.out.println("Enter the salary:");
+//		e.setSal(sc.nextDouble());
+//		
+//		System.out.println("Enter the job:");
+//		e.setJob(sc.next());
+//		
+//		System.out.println("Enter the Dept Number:");
+//		e.setDno(sc.nextInt());
+//		
+//		System.out.println("Enter the Mail ID:");
+//		e.setMail(sc.next());
+//		
+//		System.out.println("Enter the password:");
+//		e.setPassword(sc.next());
+//		
+//		edao.addEmployee(e);
+//		System.out.println("Data added successfully!");
+		
+		
+		//findById
+//		System.out.println("Enter employee id:");
+//		Employee empl=edao.findById(sc.nextInt());
+//		System.out.println(empl);
+		
+		//findByMailAndPassword
+//		System.out.println("Enter employee mail and password:");
+//		String mail=sc.next();
+//		System.out.println("Enter the password:");
+//		String password=sc.next();
+//		Employee empl=edao.findByMailAndPassword(mail,password);
+//		System.out.println(empl);
+//		if(empl!=null) {
+//			System.out.println("Login successfully");
+//		}else {
+//			System.out.println("login failed");
+//		}
+//		
+		
+		//deleteEmployee
+//		System.out.println("Enter employee id");
+//		Employee empl=edao.deleteEmployee(sc.nextInt());
+//		System.out.println(empl);
+		
+		//findAll()
+//        List<Employee> ls=edao.findAll();
+//        for(Employee ele : ls) {
+//        	System.out.println(ele);
+//        }
+	}
+
+}
