@@ -9,6 +9,7 @@ import com.Emp_App_Utility.Connector;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 private Connection con;
+	private Connection con;
 	
 	private Connection con;
 	
