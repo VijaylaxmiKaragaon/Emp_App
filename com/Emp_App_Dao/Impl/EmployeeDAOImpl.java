@@ -7,7 +7,10 @@ import com.Emp_App_Dao.EmployeeDAO;
 import com.Emp_App_Dto.Employee;
 import com.Emp_App_Utility.Connector;
 
+public class EmployeeDAOImpl implements EmployeeDAO {
 private Connection con;
+	
+	private Connection con;
 	
 	public EmployeeDAOImpl() {
 		this.con=Connecter.requestConnection();
@@ -50,6 +53,7 @@ private Connection con;
 				e.setJob(rs.getString("JOB"));
 				e.setSal(rs.getDouble("sal"));
 				e.setDno(rs.getInt("Dno"));
+				e.setMail(rs.getString("mail"));
 				e.setPassword(rs.getString("password"));
 				e.setCreatedAt(rs.getString("created_at"));
 			}
@@ -78,6 +82,7 @@ private Connection con;
 						e.setJob(rs.getString("JOB"));
 						e.setSal(rs.getDouble("sal"));
 						e.setDno(rs.getInt("Dno"));
+						e.setMail(rs.getString("mail"));
 						e.setPassword(rs.getString("password"));
 						e.setCreatedAt(rs.getString("created_at"));
 						eList.add(e);
@@ -116,11 +121,23 @@ private Connection con;
 
 	@Override
 	public void updateEmployee(Employee e) {
-//		String query="update employee set name=?, job=?, sal=?, dno=? where id=?";
-//		Employee e=null;
-//		PreparedStatement ps=con.prepareStatement(query);
-//		
-
+		String query="update employee set name=?, job=?, sal=?, dno=?, mail=?,password=?,createdAt=? where id=?";
+		PreparedStatement ps;
+		try {
+			ps = con.prepareStatement(query);
+			ps.setString(1,e.getName());
+			ps.setString(2, e.getJob());
+			ps.setDouble(3, e.getSal());
+			ps.setInt(4, e.getDno());
+			ps.setString(5, e.getMail());
+			ps.setString(6, e.getPassword());
+			ps.setString(7,e.getCreatedAt());
+			ps.setInt(8, e.getId());
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 	@Override
@@ -143,4 +160,4 @@ private Connection con;
 
 	}
 
-
+}
