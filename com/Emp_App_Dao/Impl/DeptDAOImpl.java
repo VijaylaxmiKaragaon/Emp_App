@@ -1,6 +1,10 @@
 package com.Emp_App_Dao.Impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.Emp_App_Dao.DeptDAO;
@@ -10,13 +14,11 @@ import com.Emp_App_Utility.Connector;
 
 public class DeptDAOImpl implements DeptDAO {
     
-   public class DeptDAOImpl implements DeptDAO {
-    
     private Connection con;
 
 	
 	public DeptDAOImpl() {
-		this.con=Connecter.requestConnection();
+		this.con=Connector.requestConnection();
 		}
 	
 	@Override
@@ -112,4 +114,5 @@ public class DeptDAOImpl implements DeptDAO {
 	}
 
 }
-}
+
+  

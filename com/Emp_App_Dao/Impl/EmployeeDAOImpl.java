@@ -1,6 +1,10 @@
 package com.Emp_App_Dao.Impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.Emp_App_Dao.EmployeeDAO;
@@ -9,12 +13,8 @@ import com.Emp_App_Utility.Connector;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 private Connection con;
-	private Connection con;
-	
-	private Connection con;
-	
 	public EmployeeDAOImpl() {
-		this.con=Connecter.requestConnection();
+		this.con=Connector.requestConnection();
 	}
 	@Override
 	public void addEmployee(Employee e) {
