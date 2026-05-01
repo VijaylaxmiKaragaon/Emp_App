@@ -14,5 +14,5 @@ public interface DeptDAO {
     
     void updateDept(Dept d);
     
-    void deleteDept(Integer dno);
+    Dept deleteDept(Integer dno);
 }

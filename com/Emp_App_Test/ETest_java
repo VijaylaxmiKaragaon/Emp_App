@@ -10,61 +10,118 @@ import com.empappdto.Employee;
 public class Test {
      public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-//		Employee e=new Employee();
+		Employee e=new Employee();
 		EmployeeDAO edao = new EmployeeDAOImpl();
 		
 		//addEmployee
-//		System.out.println("Enter the emp name:");
-//		e.setName(sc.next());
-//		
-//		System.out.println("Enter the salary:");
-//		e.setSal(sc.nextDouble());
-//		
-//		System.out.println("Enter the job:");
-//		e.setJob(sc.next());
-//		
-//		System.out.println("Enter the Dept Number:");
-//		e.setDno(sc.nextInt());
-//		
-//		System.out.println("Enter the Mail ID:");
-//		e.setMail(sc.next());
-//		
-//		System.out.println("Enter the password:");
-//		e.setPassword(sc.next());
-//		
-//		edao.addEmployee(e);
-//		System.out.println("Data added successfully!");
+		System.out.println("Enter the emp name:");
+		e.setName(sc.next());
+		
+		
+		System.out.println("Enter the salary:");
+		e.setSal(sc.nextDouble());
+		
+		System.out.println("Enter the job:");
+		e.setJob(sc.next());
+		
+		System.out.println("Enter the Dept Number:");
+		e.setDno(sc.nextInt());
+		
+		System.out.println("Enter the Mail ID:");
+		e.setMail(sc.next());
+		
+		System.out.println("Enter the password:");
+		e.setPassword(sc.next());
+		
+		edao.addEmployee(e);
+		System.out.println("Data added successfully!");
 		
 		
 		//findById
-//		System.out.println("Enter employee id:");
-//		Employee empl=edao.findById(sc.nextInt());
-//		System.out.println(empl);
+		System.out.println("Enter employee id:");
+		Employee empl=edao.findById(sc.nextInt());
+		System.out.println(empl);
 		
 		//findByMailAndPassword
-//		System.out.println("Enter employee mail and password:");
-//		String mail=sc.next();
-//		System.out.println("Enter the password:");
-//		String password=sc.next();
-//		Employee empl=edao.findByMailAndPassword(mail,password);
-//		System.out.println(empl);
-//		if(empl!=null) {
-//			System.out.println("Login successfully");
-//		}else {
-//			System.out.println("login failed");
-//		}
-//		
+		System.out.println("Enter employee mail and password:");
+		String mail=sc.next();
+		System.out.println("Enter the password:");
+		String password=sc.next();
+		Employee empl=edao.findByMailAndPassword(mail,password);
+		System.out.println(empl);
+		if(empl!=null) {
+			System.out.println("Login successfully");
+		}else {
+			System.out.println("login failed");
+		}
+		
 		
 		//deleteEmployee
-//		System.out.println("Enter employee id");
-//		Employee empl=edao.deleteEmployee(sc.nextInt());
-//		System.out.println(empl);
+		System.out.println("Enter employee id");
+		Employee empl=edao.deleteEmployee(sc.nextInt());
+		System.out.println(empl);
 		
 		//findAll()
-//        List<Employee> ls=edao.findAll();
-//        for(Employee ele : ls) {
-//        	System.out.println(ele);
-//        }
+       List<Employee> ls=edao.findAll();
+       for(Employee ele : ls) {
+       	System.out.println(ele);
+       }
+		 
+	   //Upadate all
+		System.out.println("Enter employee id:");
+		Integer id=sc.nextInt();
+		Employee e=edao.findById(id);
+		System.out.println("Before updated");
+		System.out.println(e);
+		System.out.println("Details to update ");
+		System.out.println("1. Name");
+		System.out.println("2. Job");
+		System.out.println("3. salary");
+		System.out.println("4. Dno");
+		System.out.println("5. Mail");
+		System.out.println("6. Password");
+		System.out.println("7. Id");
+		System.out.println("Enter the choices you have to be updated:");
+		
+		Integer choice=sc.nextInt();
+		switch(choice) {
+		case 1: System.out.println("Enter the name to be updated");
+		e.setName(sc.next());
+		break;
+		
+		case 2: System.out.println("Enter the job role to be updated");
+		e.setJob(sc.next());
+		break;
+		
+		case 3: System.out.println("Enter the salary to be updated");
+		e.setSal(sc.nextDouble());
+		break;
+		
+		case 4: System.out.println("Enter the dno to be updated");
+		e.setDno(sc.nextInt());
+		break;
+		
+		case 5: System.out.println("Enter the mail to be updated");
+		e.setMail(sc.next());
+		break;
+		
+		case 6: System.out.println("Enter the password to be updated");
+		e.setPassword(sc.next());
+		break;
+		
+		case 7: System.out.println("Enter the id to be updated");
+		e.setId(sc.nextInt());
+		break;
+		
+		default : System.out.println("invalid choice");
+		}
+		edao.updateEmployee(e);
+		System.out.println("Data modified");
+		System.out.println("After update");
+		System.out.println(e);
+		
+		
+		
 	}
 
 }
