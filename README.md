@@ -1,6 +1,6 @@
 # Employee & Department Management System (JDBC Project)
 
-## 📌 Project Overview
+## 📌 Project Overviee
 
 This is a Java-based console application that manages Employees and Departments using JDBC.  
 The project follows the DAO (Data Access Object) design pattern to perform database operations efficiently.
